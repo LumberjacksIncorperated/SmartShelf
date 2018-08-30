@@ -39,11 +39,15 @@ public class SmartShelfPriceAllocationActivity extends BaseActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String newPriceForItemOneAsString = priceInputTextFieldForItemOne.getText().toString();
-                String newPriceForItemTwoAsString = priceInputTextFieldForItemTwo.getText().toString();
-                String newPriceForItemThreeAsString = priceInputTextFieldForItemThree.getText().toString();
-                RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceForItemOneAsString, newPriceForItemTwoAsString, newPriceForItemThreeAsString);
+                SmartShelfPriceAllocationActivity.this.sendTheMessageFromTheTextBoxToRemoteServer();
             }
         };
+    }
+
+    private void sendTheMessageFromTheTextBoxToRemoteServer() {
+        String newPriceForItemOneAsString = priceInputTextFieldForItemOne.getText().toString();
+        String newPriceForItemTwoAsString = priceInputTextFieldForItemTwo.getText().toString();
+        String newPriceForItemThreeAsString = priceInputTextFieldForItemThree.getText().toString();
+        RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceForItemOneAsString, newPriceForItemTwoAsString, newPriceForItemThreeAsString);
     }
 }
