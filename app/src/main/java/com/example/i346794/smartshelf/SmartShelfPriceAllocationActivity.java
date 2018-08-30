@@ -21,7 +21,7 @@ public class SmartShelfPriceAllocationActivity extends BaseActivity {
     protected void initialiseActivity() {
         this.setContentView(SMART_SHELF_PRICE_ALLOCATION_UI_LAYOUT);
         this.setupPriceAllocationInputFields();
-        this.initialiseSendNewItemPriceAllocationsToServerButton();
+        this.initialiseSendNewItemPricesToServerButton();
     }
 
     private void setupPriceAllocationInputFields() {
@@ -30,7 +30,7 @@ public class SmartShelfPriceAllocationActivity extends BaseActivity {
         priceInputTextFieldForItemThree = (EditText) this.findViewById(R.id.ItemThreeEditText);
     }
 
-    private void initialiseSendNewItemPriceAllocationsToServerButton() {
+    private void initialiseSendNewItemPricesToServerButton() {
         Button sendNewItemPriceAllocationsToServerButton = (Button)this.findViewById(R.id.sendNewItemPriceAllocationsToServerButton);
         sendNewItemPriceAllocationsToServerButton.setOnClickListener(this.whenSendInputTextMessageButtonIsPressedThenSendTheMessageFromTheTextBoxToRemoteServer());
     }
