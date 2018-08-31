@@ -39,20 +39,34 @@ public class SmartShelfPriceAllocationActivity extends BaseActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SmartShelfPriceAllocationActivity.this.sendNewPriceAllocationToServer();
+                SmartShelfPriceAllocationActivity.this.sendNewPriceToRemoteSever();
             }
         };
     }
 
-    private void sendNewPriceAllocationToServer() {
-        this.senNewPriceToRemoteSever();
+    private void sendNewPriceAllocationToServer(String newPriceAllocationAsString) {
+        RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceAllocationAsString, this.itemIdentifier);
         this.showMessageToUser("New Price Sent To Server!");
         this.goBackToItemChoiceActivity();
     }
 
-    private void senNewPriceToRemoteSever() {
+    private void sendNewPriceToRemoteSever() {
         String newPriceForItemAsString = priceInputTextFieldForItem.getText().toString();
-        RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceForItemAsString, this.itemIdentifier);
+        if(checkPriceIsValid(newPriceForItemAsString)) {
+            this.sendNewPriceAllocationToServer(newPriceForItemAsString);
+        } else {
+            this.showMessageToUser("Invalid Price! Try Again");
+        }
+    }
+
+    private Boolean checkPriceIsValid(String potentialPrice) {
+        try {
+            Double.parseDouble(potentialPrice.trim());
+            return true;
+        }
+        catch (NumberFormatException nfe) {
+            return false;
+        }
     }
 
     private void goBackToItemChoiceActivity() {

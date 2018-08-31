@@ -36,12 +36,10 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="none"
-        android:text="$ "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PriceAllocationTitleTextView"
-        tools:text="$ " />
+        app:layout_constraintTop_toBottomOf="@+id/PriceAllocationTitleTextView" />
 
     <Button
         android:id="@+id/sendNewItemPriceAllocationsToServerButton"
