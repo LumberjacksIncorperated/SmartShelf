@@ -1,9 +1,15 @@
 package com.example.i346794.smartshelf;
-
 //--------------------------------------------------------
+//
+// DESCRIPTION
+// -----------
+// This screen is used to display the application purpose
+// to the use, before moving on to another activity
+//
 // AUTHOR
 // ------
 // Robert Charlton (i346794)
+//
 //--------------------------------------------------------
 
 import android.content.Context;
@@ -22,8 +28,7 @@ public class HomeScreenActivity extends BaseActivity {
     }
 
     @Override
-    protected void whenUserTouchesScreen()
-    {
+    protected void whenUserTouchesScreen() {
         HomeScreenActivity.this.moveToSmartShelfPriceAllocationItemChoiceActivity();
     }
 

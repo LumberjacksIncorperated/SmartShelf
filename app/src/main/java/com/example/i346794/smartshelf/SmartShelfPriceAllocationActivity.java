@@ -1,9 +1,16 @@
 package com.example.i346794.smartshelf;
-
 //--------------------------------------------------------
+//
+// DESCRIPTION
+// -----------
+// This controls the screen which uses an item selection
+// which has been made previously to offer the user the
+// choice of a new price which will be sent to a server
+//
 // AUTHOR
 // ------
 // Robert Charlton (i346794)
+//
 //--------------------------------------------------------
 
 import android.content.Context;

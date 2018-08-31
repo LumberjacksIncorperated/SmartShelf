@@ -1,9 +1,15 @@
 package com.example.i346794.smartshelf;
-
 //--------------------------------------------------------
+//
+// DESCRIPTION
+// -----------
+// This application uses a connection to a remote server
+// which this API offers the control over
+//
 // AUTHOR
 // ------
 // Robert Charlton (i346794)
+//
 //--------------------------------------------------------
 
 import java.io.IOException;

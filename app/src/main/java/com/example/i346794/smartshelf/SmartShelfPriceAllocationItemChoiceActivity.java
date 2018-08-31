@@ -1,9 +1,15 @@
 package com.example.i346794.smartshelf;
-
 //--------------------------------------------------------
+//
+// DESCRIPTION
+// -----------
+// This controls the screen where you choose the item
+// for which you wish to change the price of
+//
 // AUTHOR
 // ------
 // Robert Charlton (i346794)
+//
 //--------------------------------------------------------
 
 import android.content.Intent;

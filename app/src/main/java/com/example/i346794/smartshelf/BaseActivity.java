@@ -1,9 +1,15 @@
 package com.example.i346794.smartshelf;
-
 //--------------------------------------------------------
+//
+// DESCRIPTION
+// -----------
+// This class is designed as the base activity class
+// which all other activities should extend
+//
 // AUTHOR
 // ------
 // Robert Charlton (i346794)
+//
 //--------------------------------------------------------
 
 import android.content.Context;
