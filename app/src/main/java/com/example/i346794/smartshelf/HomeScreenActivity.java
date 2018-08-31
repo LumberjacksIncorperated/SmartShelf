@@ -24,12 +24,12 @@ public class HomeScreenActivity extends BaseActivity {
     @Override
     protected void whenUserTouchesScreen()
     {
-        HomeScreenActivity.this.moveToSmartShelfPriceAllocationActivity();
+        HomeScreenActivity.this.moveToSmartShelfPriceAllocationItemChoiceActivity();
     }
 
-    private void moveToSmartShelfPriceAllocationActivity() {
+    private void moveToSmartShelfPriceAllocationItemChoiceActivity() {
         Context applicationContext = this.getApplicationContext();
-        Intent intentToMoveToTheSmartShelfPriceAllocationActivity = new Intent(applicationContext, SmartShelfPriceAllocationActivity.class);
-        this.startActivity(intentToMoveToTheSmartShelfPriceAllocationActivity);
+        Intent intentToMoveToTheSmartShelfPriceAllocationItemChoiceActivity = new Intent(applicationContext, SmartShelfPriceAllocationItemChoiceActivity.class);
+        this.startActivity(intentToMoveToTheSmartShelfPriceAllocationItemChoiceActivity);
     }
 }

@@ -88,14 +88,13 @@ public class RemoteServerAPI {
 // EXPORTED FUNCTIONS
 //----------------------------------------------------------------------------------------------------------------------
     private static final String REQUEST_URL_FOR_SENDING_MESSAGE_TO_SERVER = "http://www.google.com/";
-    private static final String KEY_FOR_ITEM_PRICE_ONE = "ItemOne";
-    private static final String KEY_FOR_ITEM_PRICE_TWO = "ItemTwo";
+    private static final String KEY_FOR_ITEM_PRICE = "ItemPrice";
+    private static final String KEY_FOR_ITEM_NAME = "ItemName";
     private static final String KEY_FOR_ITEM_PRICE_THREE = "ItemThree";
-    public static void sendNewPricesToRemoteServerWithThreeItemPrices(String priceForItemOneAsString, String priceForItemTwoAsString, String priceForItemThreeAsString) {
+    public static void sendNewPricesToRemoteServerWithThreeItemPrices(String priceForItemAsString, String itemNameAsString) {
         HashMap parametersInRequest = new HashMap<String, String>();
-        parametersInRequest.put(KEY_FOR_ITEM_PRICE_ONE, priceForItemOneAsString);
-        parametersInRequest.put(KEY_FOR_ITEM_PRICE_TWO, priceForItemTwoAsString);
-        parametersInRequest.put(KEY_FOR_ITEM_PRICE_THREE, priceForItemThreeAsString);
+        parametersInRequest.put(KEY_FOR_ITEM_PRICE, priceForItemAsString);
+        parametersInRequest.put(KEY_FOR_ITEM_NAME, itemNameAsString);
         makeAsyncronousHTTPPOSTRequestFromURLWithParameterToValueMapping(REQUEST_URL_FOR_SENDING_MESSAGE_TO_SERVER, parametersInRequest);
     }
 }

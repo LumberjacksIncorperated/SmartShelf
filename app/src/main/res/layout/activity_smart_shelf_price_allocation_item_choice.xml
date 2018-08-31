@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreenActivity">
+
+    <TextView
+        android:id="@+id/itemChoiceTitleTextView"
+        android:layout_width="197dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="32dp"
+        android:text="        Item Choice"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sapLogoImageView"
+        tools:text="        Item Choice"
+        tools:textColor="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/sapLogoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginRight="156dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="44dp"
+        android:src="@mipmap/sap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/itemChoiceDropDownMenu"
+        android:layout_width="162dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemChoiceTitleTextView" />
+
+</android.support.constraint.ConstraintLayout>

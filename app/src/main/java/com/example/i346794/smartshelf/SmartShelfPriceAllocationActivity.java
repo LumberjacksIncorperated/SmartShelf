@@ -6,48 +6,58 @@ package com.example.i346794.smartshelf;
 // Robert Charlton (i346794)
 //--------------------------------------------------------
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class SmartShelfPriceAllocationActivity extends BaseActivity {
 
-    private EditText priceInputTextFieldForItemOne;
-    private EditText priceInputTextFieldForItemTwo;
-    private EditText priceInputTextFieldForItemThree;
+    private EditText priceInputTextFieldForItem;
+    String itemIdentifier;
 
     private final int SMART_SHELF_PRICE_ALLOCATION_UI_LAYOUT = R.layout.activity_smart_shelf_price_allocation;
     @Override
     protected void initialiseActivity() {
         this.setContentView(SMART_SHELF_PRICE_ALLOCATION_UI_LAYOUT);
+        itemIdentifier = getIntent().getStringExtra("ITEM_CHOICE");
         this.setupPriceAllocationInputFields();
         this.initialiseSendNewItemPricesToServerButton();
     }
 
     private void setupPriceAllocationInputFields() {
-        priceInputTextFieldForItemOne = (EditText) this.findViewById(R.id.ItemOneEditText);
-        priceInputTextFieldForItemTwo = (EditText) this.findViewById(R.id.ItemTwoEditText);
-        priceInputTextFieldForItemThree = (EditText) this.findViewById(R.id.ItemThreeEditText);
+        priceInputTextFieldForItem = (EditText) this.findViewById(R.id.ItemEditText);
     }
 
     private void initialiseSendNewItemPricesToServerButton() {
-        Button sendNewItemPriceAllocationsToServerButton = (Button)this.findViewById(R.id.sendNewItemPriceAllocationsToServerButton);
-        sendNewItemPriceAllocationsToServerButton.setOnClickListener(this.whenSendInputTextMessageButtonIsPressedThenSendTheMessageFromTheTextBoxToRemoteServer());
+        Button sendNewItemPriceAllocationToServerButton = (Button)this.findViewById(R.id.sendNewItemPriceAllocationsToServerButton);
+        sendNewItemPriceAllocationToServerButton.setOnClickListener(this.whenSendInputTextMessageButtonIsPressedThenSendTheMessageFromTheTextBoxToRemoteServer());
     }
 
     private View.OnClickListener whenSendInputTextMessageButtonIsPressedThenSendTheMessageFromTheTextBoxToRemoteServer() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SmartShelfPriceAllocationActivity.this.sendTheMessageFromTheTextBoxToRemoteServer();
+                SmartShelfPriceAllocationActivity.this.sendNewPriceAllocationToServer();
             }
         };
     }
 
-    private void sendTheMessageFromTheTextBoxToRemoteServer() {
-        String newPriceForItemOneAsString = priceInputTextFieldForItemOne.getText().toString();
-        String newPriceForItemTwoAsString = priceInputTextFieldForItemTwo.getText().toString();
-        String newPriceForItemThreeAsString = priceInputTextFieldForItemThree.getText().toString();
-        RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceForItemOneAsString, newPriceForItemTwoAsString, newPriceForItemThreeAsString);
+    private void sendNewPriceAllocationToServer() {
+        this.senNewPriceToRemoteSever();
+        this.showMessageToUser("New Price Sent To Server!");
+        this.goBackToItemChoiceActivity();
+    }
+
+    private void senNewPriceToRemoteSever() {
+        String newPriceForItemAsString = priceInputTextFieldForItem.getText().toString();
+        RemoteServerAPI.sendNewPricesToRemoteServerWithThreeItemPrices(newPriceForItemAsString, this.itemIdentifier);
+    }
+
+    private void goBackToItemChoiceActivity() {
+        Context applicationContext = this.getApplicationContext();
+        Intent intentToMoveToTheSmartShelfPriceAllocationItemChoiceActivity = new Intent(applicationContext, SmartShelfPriceAllocationItemChoiceActivity.class);
+        this.startActivity(intentToMoveToTheSmartShelfPriceAllocationItemChoiceActivity);
     }
 }
