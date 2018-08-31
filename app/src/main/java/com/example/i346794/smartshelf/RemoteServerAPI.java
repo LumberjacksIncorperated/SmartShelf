@@ -22,9 +22,9 @@ import java.util.Map;
 
 public class RemoteServerAPI {
 
-//----------------------------------------------------------------------------------------------------------------------
-// INTERNAL FUNCTIONS
-//----------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------
+    // INTERNAL FUNCTIONS
+    //----------------------------------------------------------------------------------------------------------------------
     private static String createHTTPParameterStringSectionForParameterValueMapping(Map.Entry<String, String> parameterToValueMapping) {
         String httpParameterString = "";
         String parameter = parameterToValueMapping.getKey();
@@ -90,9 +90,9 @@ public class RemoteServerAPI {
         threadToSendMesasgeToServer.start();
     }
 
-//----------------------------------------------------------------------------------------------------------------------
-// EXPORTED FUNCTIONS
-//----------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------
+    // EXPORTED FUNCTIONS
+    //----------------------------------------------------------------------------------------------------------------------
     private static final String REQUEST_URL_FOR_SENDING_MESSAGE_TO_SERVER = "http://www.google.com/";
     private static final String KEY_FOR_ITEM_PRICE = "ItemPrice";
     private static final String KEY_FOR_ITEM_NAME = "ItemName";
