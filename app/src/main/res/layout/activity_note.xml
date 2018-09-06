@@ -24,7 +24,7 @@
     <EditText
         android:id="@+id/noteEditText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_marginBottom="182dp"
         android:layout_marginEnd="71dp"
         android:layout_marginLeft="72dp"
@@ -36,6 +36,24 @@
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/noteTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/addNoteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="63dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginRight="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="56dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteEditText" />
 </android.support.constraint.ConstraintLayout>

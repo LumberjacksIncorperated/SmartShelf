@@ -1,31 +1,35 @@
 package com.example.i346794.smartshelf;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class NoteActivity extends BaseActivity {
 
-    private List<Note> notesList = new ArrayList<>();
     private EditText noteEditText;
     private TextView noteTextView;
     private DatabaseHelper db;
-    private int IDcounter = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initialiseActivity() {
         setContentView(R.layout.activity_note);
+        this.initalizeDatabaseHelper();
+        this.initializeButtons();
+        this.initializeTextViews();
+    }
+
+    private void initalizeDatabaseHelper(){
         db = new DatabaseHelper(this);
-        notesList.addAll(db.getAllNotes());
+    }
+
+    private void initializeTextViews() {
         noteEditText = this.findViewById(R.id.noteEditText);
         noteTextView = this.findViewById(R.id.noteTextView);
-        Button addNote = (Button)this.findViewById(R.id.moveToSmartShelfActivity);
+    }
+
+    private void initializeButtons() {
+        Button addNote = this.findViewById(R.id.addNoteButton);
         addNote.setOnClickListener(this.whenButtonPressedAddNote());
     }
 
